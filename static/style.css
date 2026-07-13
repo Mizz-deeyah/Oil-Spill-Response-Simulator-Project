@@ -1,0 +1,180 @@
+body {
+    background-color: #0d1117;
+    color: #e6edf3;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+}
+
+h1 {
+    color: #58a6ff;
+    text-align: center;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #161b22;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #8b949e;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    color: #e6edf3;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #238636;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2ea043;
+}
+.stat-card {
+    max-width: 500px;
+    margin: 15px auto;
+    background-color: #161b22;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-label {
+    color: #8b949e;
+    font-weight: bold;
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.risk-extreme, .risk-high {
+    color: #f85149;
+}
+
+.risk-moderate {
+    color: #d29922;
+}
+
+.risk-low {
+    color: #3fb950;
+}
+
+.action-form {
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.action-form button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}
+
+.action-form button[value="Deploy Booms"] {
+    background-color: #238636;
+}
+
+.action-form button[value="Use Dispersants"] {
+    background-color: #d29922;
+}
+
+.action-form button[value="Skimmers"] {
+    background-color: #1f6feb;
+}
+
+.action-form button[value="Do Nothing"] {
+    background-color: #da3633;
+}
+
+.action-form button:hover {
+    opacity: 0.85;
+}
+
+table {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #161b22;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #30363d;
+}
+
+th {
+    background-color: #21262d;
+    color: #58a6ff;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+td {
+    color: #e6edf3;
+}
+
+tr:hover {
+    background-color: #1c2128;
+}
+.navbar {
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    padding: 15px 20px;
+    background-color: #161b22;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}

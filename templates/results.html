@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oil Spill Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/history">History</a>
+  {% if current_user.role == 'admin' %}
+        <a href="/add_officer">Add Officer</a>
+    {% endif %}
+    <a href="/logout">Logout</a>
+</div>
+
+    <h1>Oil Spill Analysis</h1>
+
+    <div class="stat-card">
+        <span class="stat-label">Risk Level</span>
+        <span class="stat-value risk-{{ risk_level.lower() }}">{{ risk_level }}</span>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">Spread Radius</span>
+        <span class="stat-value">{{ spread_radius }} km</span>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">Time to Shore</span>
+        <span class="stat-value">{{ time_to_shore }} hours</span>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">Marine Life Impact</span>
+        <span class="stat-value">{{ marine_life_impact }}</span>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">Shoreline Risk</span>
+        <span class="stat-value">{{ shoreline_risk }}%</span>
+    </div>
+
+    <h2>What do you want to do?</h2>
+
+    <form action="/respond" method="POST" class="action-form">
+        <input type="hidden" name="spill_size" value="{{ spill_size }}">
+        <input type="hidden" name="wind_speed" value="{{ wind_speed }}">
+        <input type="hidden" name="wind_direction" value="{{ wind_direction }}">
+        <input type="hidden" name="sea_condition" value="{{ sea_condition }}">
+        <input type="hidden" name="distance_to_shore" value="{{ distance_to_shore }}">
+        <input type="hidden" name="oil_type" value="{{ oil_type }}">
+        <input type="hidden" name="risk_level" value="{{ risk_level }}">
+        <input type="hidden" name="spread_radius" value="{{ spread_radius }}">
+        <input type="hidden" name="time_to_shore" value="{{ time_to_shore }}">
+        <input type="hidden" name="marine_life_impact" value="{{ marine_life_impact }}">
+        <input type="hidden" name="shoreline_risk" value="{{ shoreline_risk }}">
+        <button type="submit" name="action" value="Deploy Booms">🟢 Deploy Booms</button>
+        <button type="submit" name="action" value="Use Dispersants">🟡 Use Dispersants</button>
+        <button type="submit" name="action" value="Skimmers">🔵 Skimmers</button>
+        <button type="submit" name="action" value="Do Nothing">🔴 Do Nothing</button>
+    </form>
+
+</body>
+</html>

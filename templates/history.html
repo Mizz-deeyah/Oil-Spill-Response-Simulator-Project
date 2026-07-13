@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Past Incidents</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/history">History</a>
+    {% if current_user.role == 'admin' %}
+        <a href="/add_officer">Add Officer</a>
+    {% endif %}
+    <a href="/logout">Logout</a><a href="/logout">Logout</a>
+</div>
+
+    <h1>Past Incidents</h1>
+
+    <table>
+        <tr>
+            <th>Risk Level</th>
+            <th>Action Taken</th>
+            <th>Outcome</th>
+            <th>Containment Success</th>
+            <th>Cost</th>
+        </tr>
+
+        {% for incident in incidents %}
+        <tr>
+            <td>{{ incident.risk_level }}</td>
+            <td>{{ incident.action_taken }}</td>
+            <td>{{ incident.outcome }}</td>
+            <td>{{ incident.containment_success }}%</td>
+            <td>${{ "{:,}".format(incident.cost) }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

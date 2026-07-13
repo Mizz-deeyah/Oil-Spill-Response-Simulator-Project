@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Response Outcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/history">History</a>
+    {% if current_user.role == 'admin' %}
+        <a href="/add_officer">Add Officer</a>
+    {% endif %}
+    <a href="/logout">Logout</a>
+</div>
+
+    <h1>Response Outcome</h1>
+
+    <div class="stat-card">
+        <span class="stat-label">Action Taken</span>
+        <span class="stat-value">{{ action }}</span>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">Containment Success</span>
+        <span class="stat-value">{{ containment_success }}%</span>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">Cost</span>
+        <span class="stat-value">${{ cost }}</span>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">Outcome</span>
+        <span class="stat-value">{{ outcome }}</span>
+    </div>
+
+</body>
+</html>

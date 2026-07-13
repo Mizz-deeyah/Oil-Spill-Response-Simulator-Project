@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Offshore Emergency Center</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/history">History</a>
+   {% if current_user.role == 'admin' %}
+        <a href="/add_officer">Add Officer</a>
+    {% endif %}
+    <a href="/logout">Logout</a>
+</div>
+
+    <h1>Oil Spill Response Simulator</h1>
+
+    <form action="/predict" method="POST">
+        <label for="spill_size">Spill Size (barrels):</label>
+        <input type="number" id="spill_size" name="spill_size" min="0" required>
+        <br><br>
+
+    <label for="wind_speed">Wind Speed (km/h):</label>
+    <input type="number" id="wind_speed" name="wind_speed" min="0" required>
+    <br><br>
+
+    <label for="wind_direction">Wind Direction:</label>
+        <select id="wind_direction" name="wind_direction" required>
+            <option value="N">North</option>
+            <option value="NE">Northeast</option>
+            <option value="E">East</option>
+            <option value="SE">Southeast</option>
+            <option value="S">South</option>
+            <option value="SW">Southwest</option>
+            <option value="W">West</option>
+            <option value="NW">Northwest</option>
+        </select>
+        <br><br>
+
+    <label for="sea_condition">Sea Condition:</label>
+    <select id="sea_condition" name="sea_condition" required>
+    <option value="Calm">Calm</option>
+    <option value="Moderate">Moderate</option>
+    <option value="Rough">Rough</option>
+</select>
+<br><br>
+
+    <label for="distance_to_shore">Distance to Shoreline (km):</label>
+<input type="number" id="distance_to_shore" name="distance_to_shore" min="0" required>
+<br><br>
+     <label for="oil_type">Oil Type:</label>
+<select id="oil_type" name="oil_type" required>
+    <option value="Light">Light</option>
+    <option value="Medium">Medium</option>
+    <option value="Heavy">Heavy</option>
+</select>
+<br><br>
+
+    <button type="submit">Predict</button>
+
+
+
+    </form>
+
+</body>
+</html>

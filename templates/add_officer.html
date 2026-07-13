@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Officer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/history">History</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <h1>Add New Officer</h1>
+
+    <form action="/add_officer" method="POST">
+        <label for="email">Officer Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <label for="password">Temporary Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+
+        <button type="submit">Add Officer</button>
+    </form>
+
+</body>
+</html>
